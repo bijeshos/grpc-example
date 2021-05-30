@@ -1,3 +1,3 @@
-# grpc-example
+# grpc-go-example
 
-A simple gRPC example project
+A simple gRPC example in Go
