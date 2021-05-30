@@ -1,15 +1,14 @@
-// Package main implements a server for ChatBot service.
+// Package server implements a server for ChatBot service.
 package server
 
 import (
 	"context"
 	"log"
-	"math/rand"
 	"net"
-	"strconv"
+	"strings"
 	"time"
 
-	pb "github.com/bijeshos/grpc_example/protof"
+	pb "github.com/bijeshos/grpc_go_example/protof"
 	"google.golang.org/grpc"
 )
 
@@ -24,9 +23,16 @@ type server struct {
 
 // Chat implements protof.ChatBotServer
 func (s *server) Chat(ctx context.Context, in *pb.ChatBotRequest) (*pb.ChatBotReply, error) {
-	log.Printf("Received from client: %v", in.GetQuery())
-	time.Now()
-	return &pb.ChatBotReply{Message: "Acknowledement Id : " + strconv.Itoa(rand.Int())}, nil
+	log.Printf("Query received from client: %v", in.GetQuery())
+
+	//This is a rudimentary way of checking input. Not recommanded for real life scenarios.
+	//Doing it this way to keeping it simple.
+	if strings.Contains(in.GetQuery(), "What is the time now?") {
+		return &pb.ChatBotReply{Message: "Current time is " + time.Now().String()}, nil
+	} else {
+		return &pb.ChatBotReply{Message: "Processing query [ " + in.GetQuery() + " ] is not implemented yet"}, nil
+	}
+
 }
 
 func RunServer() {

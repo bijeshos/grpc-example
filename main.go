@@ -4,8 +4,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/bijeshos/grpc_example/client"
-	"github.com/bijeshos/grpc_example/server"
+	"github.com/bijeshos/grpc_go_example/client"
+	"github.com/bijeshos/grpc_go_example/server"
 )
 
 func main() {

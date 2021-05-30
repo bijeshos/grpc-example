@@ -1,4 +1,4 @@
-// Package main implements a client for ChatBot service.
+// Package client implements a client for ChatBot service.
 package client
 
 import (
@@ -7,13 +7,13 @@ import (
 	"os"
 	"time"
 
-	pb "github.com/bijeshos/grpc_example/protof"
+	pb "github.com/bijeshos/grpc_go_example/protof"
 	"google.golang.org/grpc"
 )
 
 const (
 	address      = "localhost:50051"
-	defaultQuery = "What is the time there?"
+	defaultQuery = "What is the time now?"
 )
 
 func RunClient() {
@@ -33,9 +33,10 @@ func RunClient() {
 	if len(os.Args) > 2 {
 		query = os.Args[2]
 	}
-	log.Printf("Query: %s", query)
+
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 	defer cancel()
+	log.Printf("Sending query: %s", query)
 	r, err := c.Chat(ctx, &pb.ChatBotRequest{Query: query})
 	if err != nil {
 		log.Fatalf("could not greet: %v", err)
