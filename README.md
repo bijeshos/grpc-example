@@ -30,6 +30,6 @@ Run the following to start client
 
 # Re-generate Proto files (Optional)
 - If any changes are made in proto service definition files, regenerate the proto files
-    - `$ protoc --go_out=. --go_opt=paths=source_relative  --go-grpc_out=. --go-grpc_opt=paths=source_relative protof/message.proto`
+    - `$ protoc --go_out=. --go_opt=paths=source_relative  --go-grpc_out=. --go-grpc_opt=paths=source_relative protof/product.proto`
 - Make respective changes in server/client implementations
 - Rerun server/client
