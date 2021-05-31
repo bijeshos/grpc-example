@@ -1,6 +1,6 @@
 # gRPC Go example
 
-A simple gRPC example in Go
+A simple gRPC client-server example in Go
 
 # Prerequisites
 - Install Protocol Buffer
