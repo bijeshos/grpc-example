@@ -1,4 +1,4 @@
-module github.com/bijeshos/grpc_go_example
+module github.com/bijeshos/grpc-go-example
 
 go 1.16
 

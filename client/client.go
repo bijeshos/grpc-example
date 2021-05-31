@@ -7,7 +7,7 @@ import (
 	"os"
 	"time"
 
-	pb "github.com/bijeshos/grpc_go_example/protof"
+	pb "github.com/bijeshos/grpc-go-example/protof"
 	"google.golang.org/grpc"
 )
 

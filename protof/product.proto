@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "github.com/bijeshos/grpc_go_example/protof";
+option go_package = "github.com/bijeshos/grpc-go-example/protof";
 
 
 package protof;

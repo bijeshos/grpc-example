@@ -7,7 +7,7 @@ import (
 	"net"
 	"strings"
 
-	pb "github.com/bijeshos/grpc_go_example/protof"
+	pb "github.com/bijeshos/grpc-go-example/protof"
 	"google.golang.org/grpc"
 )
 
@@ -20,7 +20,7 @@ type server struct {
 	pb.UnimplementedProductServer
 }
 
-// Chat implements protof.ProductServer
+// Search implements protof.ProductServer
 func (s *server) Search(ctx context.Context, in *pb.ProductSearchRequest) (*pb.ProductSearchReply, error) {
 	log.Printf("Product received from client: %v", in.GetProduct())
 
