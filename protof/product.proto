@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option go_package = "github.com/bijeshos/grpc_go_example/protof";
+
+
+package protof;
+
+// The product service definition.
+service Product {
+  // Sends a product name to search for
+  rpc search (ProductSearchRequest) returns (ProductSearchReply) {}
+}
+
+// The request message containing client's search.
+message ProductSearchRequest {
+  string product = 1;
+}
+
+// The response message containing the search status
+message ProductSearchReply {
+  string message = 1;
+}

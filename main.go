@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	log.Println("starting chatbot server example")
+	log.Println("starting product inventory server example")
 	mode := os.Args[1]
 
 	if mode == "server" {
